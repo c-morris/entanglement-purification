@@ -120,7 +120,7 @@ This protocol can be repeated indefinitely.
 - BPPSSW protocol requires exponential number of qubits
 	- Not practically feasible
 - Entanglment pumping trades spacial requirement for temporal requirement
-	- Recieve new "elemntary" entangled pairs as protocol advances
+	- Recieve new "elementary" entangled pairs as protocol advances
 	- Probabilistic -  but polynomial time
 
 ## Entanglement Pumping
@@ -135,5 +135,6 @@ This protocol can be repeated indefinitely.
 	- Longer process
 	- Can't be parrallelized
 	- Requires transmission of qubits
+- Can be generalized to $N\mapsto M$ protocols
 
 
