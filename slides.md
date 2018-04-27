@@ -15,7 +15,7 @@ output:
 # Motivation
 
 
-## Entanglement 
+## Entanglement
 
 - Joint state which cannot be "seperated"
 	- i.e $\ket{\psi}$ is seperable $\leftarrow \nexists \ \ket{\psi_1}, \ \ket{\psi_2} s.t. \ket{\psi} = \ket{\psi_1} \otimes \ket{\psi_2}$
@@ -26,7 +26,7 @@ output:
 ## Example 1
 
 \begin{align*}
-	\rho_{AB} &= \ket{\Psi_{00}}\bra{\Psi_{00}}_{AB})\\
+	\rho_{AB} &= \ket{\Psi_{00}}\bra{\Psi_{00}}_{AB}\\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(1,0,0,0) - H(.5,.5)\\
 	&= 0 - 1\\
@@ -36,7 +36,7 @@ output:
 ## Example 2
 
 \begin{align*}
-	\rho'_{AB} &= .8\ket{\Psi_{00}}\bra{\Psi_{00}}_{AB}) + \frac{.2}{4}I \\
+	\rho'_{AB} &= .8\ket{\Psi_{00}}\bra{\Psi_{00}}_{AB} + \frac{.2}{4}I \\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(.85,.05,.05,.05) - H(.5,.5)\\
 	&= .84 - 1\\
@@ -59,6 +59,20 @@ output:
 
 # Entanglement Distillation
 
+## Background
+
+- Fidelity
+	- "Closeness" of a state to $\ket{\Psi_{00}}\bra{\Psi_{00}}$
+	- $F =\bra{\Psi_{00}}\rho\ket{\Psi_{00}}$
+- Werner States
+	- Invariant under all unitary operators (up to a phase)
+	- $\rho = U\rho U^*$
+	- For our purposes they take the form $x\ket{\Psi_{00}}\bra{\Psi_{00}} + (1-x)I$
+- Depolarization
+	- A process of removing off-diagonals/equalizing eigenvalues
+	- Can be used to turn an arbitrary state into a Werner state
+	- Preserves fidelity of original state
+
 ## BBPSSW, a Recurrence Purification Protocol (1/5)
 
 - Described in a paper by Bennet et al. in 1996
@@ -72,7 +86,7 @@ output:
 1. Depolarize $\rho$ to a Werner state
   - For example, $x\ket{\phi_{00}}\bra{\phi_{00}} + (1-x)\frac{1}{4}I$
 2. Bilateral CNOTs on the entangled states
-3. Measure the target pair. If the measurement is the same keep the pair and repeat. If not, discard the pair. 
+3. Measure the target pair. If the measurement is the same keep the pair and repeat. If not, discard the pair.
 
 ## BPPSSW, Bilateral CNOTS (3/5)
 
@@ -82,6 +96,7 @@ Alice sends Bob qubits 2 and 4. Qubit 1 is entangled with 2 and 3 is entangled w
 | ------- |:---------:|:-------:|
 | Alice's | qubit 1   | qubit 3 |
 | Bob's   | qubit 2   | qubit 4 |
+
 
 ## BPPSSW, Deciding to Keep or Discard (4/5)
 
@@ -97,3 +112,4 @@ Alice and Bob choose to measure one of their two pairs in the Z basis. Depending
 This protocol can be repeated indefinitely.
 
 ![Rounds of Iteration](purificationIterations.png)
+
