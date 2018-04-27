@@ -113,6 +113,7 @@ Alice and Bob choose to measure one of their two pairs in the Z basis. Depending
 ## BPPSSW, Iterations (5/5)
 
 This protocol can be repeated indefinitely.
+![Rounds of Iteration](purificationIterations.png)
 
 ## Entanglement Pumping
 
@@ -134,4 +135,5 @@ This protocol can be repeated indefinitely.
 	- Longer process
 	- Can't be parrallelized
 	- Requires transmission of qubits
+
 
