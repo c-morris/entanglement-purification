@@ -17,7 +17,9 @@ output:
 ## Entanglement 
 
 - Entanglement is a valuable resource in many quantum communication protocols
-- Require transferal one of the entangled pair to a party
+- Require transferal of one of the entangled pair to a party
+- 
+
 
 
 
