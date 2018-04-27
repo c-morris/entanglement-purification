@@ -26,7 +26,7 @@ output:
 ## Example 1
 
 \begin{align*}
-	\rho_{AB} &= \ket{\Psi_{00}}\bra{\Psi_{00}}_{AB})\\
+	\rho_{AB} &= \ket{\Psi_{00}}\bra{\Psi_{00}}_{AB}\\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(1,0,0,0) - H(.5,.5)\\
 	&= 0 - 1\\
@@ -36,7 +36,7 @@ output:
 ## Example 2
 
 \begin{align*}
-	\rho'_{AB} &= .8\ket{\Psi_{00}}\bra{\Psi_{00}}_{AB}) + \frac{.2}{4}I \\
+	\rho'_{AB} &= .8\ket{\Psi_{00}}\bra{\Psi_{00}}_{AB} + \frac{.2}{4}I \\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(.85,.05,.05,.05) - H(.5,.5)\\
 	&= .84 - 1\\
@@ -58,6 +58,20 @@ output:
 - We want to find a way to increase entanglement at a distance
 
 # Entanglement Distillation
+
+## Background 
+
+- Fidelity
+	- "Closeness" of a state to $\ket{\Psi_{00}}\bra{\Psi_{00}}$
+	- $F =\bra{\Psi_{00}}\rho\ket{\Psi_{00}}$
+- Werner States
+	- Invariant under all unitary operators (up to a phase)
+	- $\rho = U\rho U^*$
+	- For our purposes they take the form $x\ket{\Psi_{00}}\bra{\Psi_{00}} + (1-x)I$
+- Depolarization
+	- A process of removing off-diagonals/equalizing eigenvalues
+	- Can be used to turn an arbitrary state into a Werner state
+	- Preserves fidelity of original state
 
 ## BBPSSW, a Recurrence Purification Protocol (1/?)
 
