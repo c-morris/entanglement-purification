@@ -15,7 +15,7 @@ output:
 # Motivation
 
 
-## Entanglement 
+## Entanglement
 
 - Joint state which cannot be "seperated"
 	- i.e $\ket{\phi}$ is seperable $\leftarrow \nexists \ \ket{\phi_1}, \ \ket{\phi_2} s.t. \ket{\phi} = \ket{\phi_1} \otimes \ket{\phi_2}$
@@ -63,7 +63,7 @@ output:
 
 # Entanglement Distillation
 
-## Background 
+## Background
 
 - Fidelity
 	- "Closeness" of a state to $\ket{\phi_{00}}\bra{\phi_{00}}$
@@ -77,7 +77,7 @@ output:
 	- Can be used to turn an arbitrary state into a Werner state
 	- Preserves fidelity of original state
 
-## BBPSSW, a Recurrence Purification Protocol (1/?)
+## BBPSSW, a Recurrence Purification Protocol (1/5)
 
 - Described in a paper by Bennet et al. in 1996
 - Allows the purification of states with arbitrary accuracy
@@ -85,14 +85,14 @@ output:
     - but you need $2^n$ qubits
 - Requires two way classical communication between Alice and Bob
 
-## BPPSSW, Three Simple Steps (2/?)
+## BPPSSW, Three Simple Steps (2/5)
 
 1. Depolarize $\rho$ to a Werner state
   - For example, $x\ket{\phi_{00}}\bra{\phi_{00}} + (1-x)\frac{1}{4}I$
 2. Bilateral CNOTs on the entangled states
-3. Measure the target pair. If the measurement is the same keep the pair and repeat. If not, discard the pair. 
+3. Measure the target pair. If the measurement is the same keep the pair and repeat. If not, discard the pair.
 
-## BPPSSW, Bilateral CNOTS (3/?)
+## BPPSSW, Bilateral CNOTS (3/5)
 
 Alice sends Bob qubits 2 and 4. Qubit 1 is entangled with 2 and 3 is entangled with 4.
 
@@ -100,6 +100,19 @@ Alice sends Bob qubits 2 and 4. Qubit 1 is entangled with 2 and 3 is entangled w
 | ------- |:---------:|:-------:|
 | Alice's | qubit 1   | qubit 3 |
 | Bob's   | qubit 2   | qubit 4 |
+
+## BPPSSW, Deciding to Keep or Discard (4/5)
+
+Alice and Bob choose to measure one of their two pairs in the Z basis. Depending on how pure the entanglement is, it will collapse to a more pure or less pure state. 
+
+- If the state is already pure, then measuring a $\ket{1}$ or $\ket{1}$ at one of the entangled qubits will collapse the other qubit into the same state
+    - Ex: $\ket{\phi_{00}}$ will collapse to $\ket{00}$ with probability $\frac{1}{2}$ and to $\ket{11}$ with probability $\frac{1}{2}$
+    - If $\ket{01}$ or $\ket{10}$ is observed, then the entanglement must have been weakened by noise in the quantum channel
+- We don't have any of the $\ket{\psi}$ bell states because the state was depolarized
+
+## BPPSSW, Iterations (5/5)
+
+This protocol can be repeated indefinitely.
 
 ## Entanglement Pumping
 
