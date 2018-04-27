@@ -18,15 +18,17 @@ output:
 ## Entanglement 
 
 - Joint state which cannot be "seperated"
-	- i.e $\ket{\psi}$ is seperable $\leftarrow \nexists \ \ket{\psi_1}, \ \ket{\psi_2} s.t. \ket{\psi} = \ket{\psi_1} \otimes \ket{\psi_2}$
+	- i.e $\ket{\phi}$ is seperable $\leftarrow \nexists \ \ket{\phi_1}, \ \ket{\phi_2} s.t. \ket{\phi} = \ket{\phi_1} \otimes \ket{\phi_2}$
 - Conditional Von-Neuman entropy quantifies the level of entanglement 
 	- $S(A|B) - S(B) \langle 0$ implies that $\rho_{AB}$ is entangled
 	- $S(A|B) - S(B) = -1$ imples that $\rho_{AB}$ is maximally entangled
 
 ## Example 1
 
+### Conditional entropy of a pure state
+
 \begin{align*}
-	\rho_{AB} &= \ket{\Psi_{00}}\bra{\Psi_{00}}_{AB}\\
+	\rho_{AB} &= \ket{\phi_{00}}\bra{\phi_{00}}_{AB}\\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(1,0,0,0) - H(.5,.5)\\
 	&= 0 - 1\\
@@ -35,8 +37,10 @@ output:
 
 ## Example 2
 
+### Conditional entropy of a noisy entangled state
+
 \begin{align*}
-	\rho'_{AB} &= .8\ket{\Psi_{00}}\bra{\Psi_{00}}_{AB} + \frac{.2}{4}I \\
+	\rho'_{AB} &= .8\ket{\phi_{00}}\bra{\phi_{00}}_{AB} + \frac{.2}{4}I \\
 	S(A|B) - S(B) &= H(eig(AB)) - H(eig(B)) \\
 	&= H(.85,.05,.05,.05) - H(.5,.5)\\
 	&= .84 - 1\\
@@ -62,12 +66,12 @@ output:
 ## Background 
 
 - Fidelity
-	- "Closeness" of a state to $\ket{\Psi_{00}}\bra{\Psi_{00}}$
-	- $F =\bra{\Psi_{00}}\rho\ket{\Psi_{00}}$
+	- "Closeness" of a state to $\ket{\phi_{00}}\bra{\phi_{00}}$
+	- $F =\bra{\phi_{00}}\rho\ket{\phi_{00}}$
 - Werner States
 	- Invariant under all unitary operators (up to a phase)
 	- $\rho = U\rho U^*$
-	- For our purposes they take the form $x\ket{\Psi_{00}}\bra{\Psi_{00}} + (1-x)I$
+	- For our purposes they take the form $x\ket{\phi_{00}}\bra{\phi_{00}} + (1-x)I$
 - Depolarization
 	- A process of removing off-diagonals/equalizing eigenvalues
 	- Can be used to turn an arbitrary state into a Werner state
@@ -96,3 +100,25 @@ Alice sends Bob qubits 2 and 4. Qubit 1 is entangled with 2 and 3 is entangled w
 | ------- |:---------:|:-------:|
 | Alice's | qubit 1   | qubit 3 |
 | Bob's   | qubit 2   | qubit 4 |
+
+## Entanglement Pumping
+
+- BPPSSW protocol requires exponential number of qubits
+	- Not practically feasible
+- Entanglment pumping trades spacial requirement for temporal requirement
+	- Recieve new "elemntary" entangled pairs as protocol advances
+	- Probabilistic -  but polynomial time
+
+## Entanglement Pumping
+
+- Purify one system using another recieved noisily entangled pair
+	- Use the two systems for one round of BPPSSW
+	- If successfully purify, repeat
+	- Else restart (with two new elementary pairs)
+- If a purification round fails, whole process restarts
+	- But reach arbitrarily high fidelity rather quickly
+- Trade-offs:
+	- Longer process
+	- Can't be parrallelized
+	- Requires transmission of qubits
+
